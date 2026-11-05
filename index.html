@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Основные SEO метатеги -->
+    <title>Кирилл Юркевич - IT Project Manager & Системный/Бизнес-аналитик (BA/SA)</title>
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='42' y='15' width='16' height='70' rx='8' fill='%233b82f6'/%3E%3C/svg%3E">
+    <meta name="description" content="Резюме и портфолио Кирилла Юркевича: IT Project Manager, системный и бизнес-аналитик (BA/SA). 10+ лет опыта в автоматизации процессов, внедрении 1С:ERP и разработке масштабных e-commerce проектов.">
+    <meta name="keywords" content="Кирилл Юркевич, IT Project Manager, бизнес-аналитик, системный аналитик, BA, SA, 1С ERP, Могилев, Минск, Москва, управление IT проектами, Scrum, Kanban, BPMN, разработка сайтов">
+    <meta name="author" content="Кирилл Юркевич">
+    <link rel="canonical" href="https://yourkevitch.by"> <!-- Условный канонический URL -->
+
+    <!-- Социальные метатеги (Open Graph / Facebook / Telegram / Viber) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourkevitch.by">
+    <meta property="og:title" content="Кирилл Юркевич | IT Project Manager & BA/SA Portfolio">
+    <meta property="og:description" content="10+ лет опыта в IT. Проектирование архитектуры ERP/CRM, управление кросс-функциональными командами, запуск крупных онлайн-каталогов.">
+    <meta property="og:image" content="https://googleusercontent.com">
+
+
+    <!-- Twitter Карточки -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Кирилл Юркевич | IT Project Manager & BA/SA Portfolio">
+    <meta property="twitter:description" content="10+ лет опыта в IT. Проектирование архитектуры ERP/CRM, управление кросс-функциональными командами, запуск крупных онлайн-каталогов.">
+    <meta property="twitter:image" content="https://googleusercontent.com">
+
+    <!-- Tailwind CSS из разрешенного белого списка -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Подключение единого шрифта JetBrains Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Подключение библиотеки для генерации честных QR-кодов из разрешенного CDN cdnjs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: #0b111e;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .neon-glow {
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.15);
+        }
+        .qr-glow {
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.15);
+        }
+        /* Стилизация сгенерированных QR-кодов */
+        .qr-container img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 6px;
+        }
+        /* Кастомный скроллбар */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b82f6;
+        }
+        /* Плавное скрытие/отображение слайдов */
+        .slide-transition {
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="text-slate-100 min-h-full flex flex-col justify-between selection:bg-blue-500/30 selection:text-blue-200">
+
+    <!-- Уведомления системы -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none" aria-live="assertive"></div>
+
+
+    <!-- Навигационная панель (Шапка сайта) -->
+    <nav class="sticky top-0 z-40 bg-[#0b111e]/90 backdrop-blur-md border-b border-slate-800/60 px-4 lg:px-8 py-4 flex items-center justify-between shadow-lg">
+        <div class="flex items-center gap-1">
+            <span class="text-blue-500 font-bold" aria-hidden="true">&lt;</span>
+            <span class="text-white font-extrabold tracking-tight text-base sm:text-lg">Кирилл.Юркевич</span>
+            <span class="text-blue-500 font-bold" aria-hidden="true">/&gt;</span>
+        </div>
+        
+        <!-- Семантическое меню скролла -->
+        <div class="hidden md:flex items-center gap-6 text-xs font-semibold uppercase tracking-wider text-slate-400">
+            <a href="#about" class="hover:text-blue-400 transition-colors">Обо мне</a>
+            <a href="#specialties" class="hover:text-blue-400 transition-colors">Компетенции</a>
+            <a href="#experience" class="hover:text-blue-400 transition-colors">Опыт</a>
+			<a href="#education" class="hover:text-blue-400 transition-colors">Обучение</a>
+            <a href="#skills" class="hover:text-blue-400 transition-colors">Стек</a>
+        </div>
+
+        <!-- Кнопки связи в меню -->
+        <div class="flex items-center gap-2.5">
+            <a href="tg://resolve?domain=@unheadless" target="_blank" rel="noopener noreferrer" class="bg-[#229ED9]/10 hover:bg-[#229ED9]/20 border border-[#229ED9]/30 text-[#229ED9] p-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm">
+
+                <span>✈️</span> <span class="hidden sm:inline">Telegram</span>
+            </a>
+            <a href="mailto:yourkevitchK@yandex.by" class="bg-blue-600/10 hover:bg-blue-600/20 border border-blue-500/30 text-blue-400 p-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm">
+                <span>✉️</span> <span class="hidden sm:inline">Email</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Основной содержательный контент (Семантический тег main) -->
+    <main class="flex-1 flex flex-col justify-between">
+        
+        <!-- Главный экран (Hero Section) -->
+        <header id="about" class="max-w-6xl w-full mx-auto px-4 pt-8 pb-16 md:py-20 grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            <!-- Левая колонка: Чистое изображение (Оптимизировано alt-описанием для SEO картинок) -->
+            <div class="md:col-span-5 lg:col-span-5 flex justify-center relative group">
+                <div class="absolute -inset-4 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="w-full max-w-[360px] relative overflow-hidden rounded-2xl">
+                    <img id="uploaded-avatar" class="w-full h-auto object-cover z-10 filter drop-shadow-[0_0_15px_rgba(59,130,246,0.15)]" src="YourkevitchK.png" alt="IT Project Manager, Системный и Бизнес-аналитик Кирилл Юркевич">
+                </div>
+            </div>
+
+            <!-- Правая колонка: Текстовая презентация и QR-коды -->
+            <div class="md:col-span-7 lg:col-span-7 space-y-6 text-center md:text-left">
+                <!-- <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded-full text-[11px] font-medium text-blue-400">
+                    🚀 Доступен для предложений (Гибрид / Удаленка)
+                </div> -->
+                <!-- Главный заголовок H1 — Самый весомый для SEO элемент на странице -->
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-none uppercase">
+                    Превращаю требования бизнеса в <span class="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent"> IT-архитектуру</span>
+                </h1>
+                <p class="text-xs sm:text-sm text-slate-400 max-w-2xl font-normal leading-relaxed">
+                    Я — IT Project Manager и Системный/Бизнес-аналитик с глубокой технической базой. Специализируюсь на проектировании сложной архитектуры, управлении кросс-функциональными командами до 15 человек и внедрении тяжелых систем класса <span class="text-white font-bold">ERP</span>.
+                </p>
+                
+                <!-- Краткие карточки-факты -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-left">
+
+                    <div class="bg-slate-900/50 border border-slate-800 p-3 rounded-xl shadow-inner">
+                        <p class="text-xl font-bold text-white">10+ лет</p>
+                        <p class="text-[10px] text-slate-500 font-bold uppercase mt-0.5">В индустрии</p>
+                    </div>
+                    <div class="bg-slate-900/50 border border-slate-800 p-3 rounded-xl shadow-inner">
+                        <p class="text-xl font-bold text-blue-400">1000+</p>
+                        <p class="text-[10px] text-slate-500 font-bold uppercase mt-0.5">Пользователей ERP</p>
+                    </div>
+                    <div class="bg-slate-900/50 border border-slate-800 p-3 rounded-xl shadow-inner">
+                        <p class="text-xl font-bold text-indigo-400">33 года</p>
+                        <p class="text-[10px] text-slate-500 font-bold uppercase mt-0.5">Могилев, РБ</p>
+                    </div>
+                    <div class="bg-slate-900/50 border border-slate-800 p-3 rounded-xl shadow-inner">
+                        <p class="text-xl font-bold text-purple-400">B1 / C1</p>
+                        <p class="text-[10px] text-slate-500 font-bold uppercase mt-0.5">EN</p>
+                    </div>
+                </div>
+
+                <!-- Блок с QR-кодами для быстрого перехода -->
+
+                <div class="bg-slate-950/60 border border-slate-800/80 p-4 rounded-2xl flex flex-col sm:flex-row items-center gap-4 justify-between max-w-xl mx-auto md:mx-0 shadow-lg">
+                    <div class="text-center sm:text-left space-y-1">
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider">Быстрый скан с телефона</h4>
+                        <p class="text-[11px] text-slate-400">Отсканируйте код для мгновенного перехода в мессенджер или отправки письма.</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <!-- Telegram Рабочий QR -->
+                        <div class="flex flex-col items-center gap-1 bg-slate-900 p-2.5 border border-slate-800/80 rounded-xl qr-glow">
+                            <div id="tg-qrcode" class="w-16 h-16 bg-white p-1 rounded border border-slate-700 qr-container"></div>
+                            <span class="text-[9px] font-bold text-slate-400 tracking-wider mt-1">TELEGRAM</span>
+                        </div>
+                        <!-- Email Рабочий QR -->
+                        <div class="flex flex-col items-center gap-1 bg-slate-900 p-2.5 border border-slate-800/80 rounded-xl qr-glow">
+                            <div id="email-qrcode" class="w-16 h-16 bg-white p-1 rounded border border-slate-700 qr-container"></div>
+                            <span class="text-[9px] font-bold text-slate-400 tracking-wider mt-1">EMAIL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        <!-- Мои ключевые компетенции (Семантическая секция) -->
+        <section id="specialties" class="bg-slate-950 border-y border-slate-900 py-16 relative">
+            <div class="max-w-6xl w-full mx-auto px-4">
+                <div class="text-center max-w-xl mx-auto mb-10">
+                    <h2 class="text-2xl font-black text-white uppercase tracking-tight">Ключевые компетенции</h2>
+                    <!-- <p class="text-[10px] text-slate-500 uppercase tracking-widest mt-1">Автоматическая карусель кейсов с возможностью ручного листания</p> -->
+                </div>
+
+                <!-- Главный контейнер слайдера -->
+                <div class="relative px-4 sm:px-12 max-w-4xl mx-auto min-h-[260px] flex items-center">
+                    
+                    <!-- Левая стрелочка -->
+                    <button onclick="prevSlide()" class="absolute left-0 z-20 w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-blue-500/50 flex items-center justify-center transition-all shadow-md" aria-label="Предыдущий слайд">
+                        &larr;
+                    </button>
+
+                    <!-- Слайды -->
+
+                    <div class="w-full relative overflow-hidden min-h-[240px]" id="slider-content-container">
+                        
+                        <!-- Слайд 1: PM Базовый -->
+                        <div class="slide-item active slide-transition absolute inset-0 w-full opacity-100 transform translate-x-0 grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl flex flex-col justify-between">
+                                <div class="space-y-3">
+                                    <div class="text-xs font-bold text-blue-400 uppercase tracking-widest">[ PM роль / 01 ]</div>
+                                    <h3 class="text-base font-bold text-white uppercase">Управление жизненным циклом SDLC</h3>
+                                    <p class="text-xs text-slate-400 leading-relaxed">
+                                        Руководство кросс-функциональной ИТ-командой до 15 специалистов (разработчики, QA, дизайн, маркетинг). Полноценное внедрение гибких методологий Agile (Scrum, Kanban), ведение бэклога, декомпозиция задач и управление релизами в Jira и ClickUp.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl flex flex-col justify-between">
+                                <div class="space-y-3">
+                                    <div class="text-xs font-bold text-indigo-400 uppercase tracking-widest">[ PM роль / 02 ]</div>
+                                    <h3 class="text-base font-bold text-white uppercase">Масштабирование систем & Вывод на мощность</h3>
+                                    <p class="text-xs text-slate-400 leading-relaxed">
+                                        Успешное управление бюджетами и рисками проектов. Разработка, запуск и вывод корпоративной ERP/CRM-системы на проектную мощность в 1 000+ активных пользователей.
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Слайд 2: Онлайн каталоги для РФ и РБ -->
+                        <div class="slide-item slide-transition absolute inset-0 w-full opacity-0 transform translate-x-8 pointer-events-none grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl flex flex-col justify-between">
+                                <div class="space-y-3">
+                                    <div class="text-xs font-bold text-purple-400 uppercase tracking-widest">[ E-Commerce / 03 ]</div>
+                                    <h3 class="text-base font-bold text-white uppercase">Разработка масштабных онлайн-каталогов</h3>
+                                    <p class="text-xs text-slate-400 leading-relaxed">
+                                        Успешное проектирование и запуск крупных e-commerce проектов для рынков Республики Беларусь и Российской Федерации. Внедрение динамической матрицы торговых предложений со сложной фильтрацией.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl flex flex-col justify-between">
+                                <div class="space-y-3">
+                                    <div class="text-xs font-bold text-emerald-400 uppercase tracking-widest">[ Web & Analytics / 04 ]</div>
+
+                                    <h3 class="text-base font-bold text-white uppercase">Сквозная аналитика и Порталы</h3>
+                                    <p class="text-xs text-slate-400 leading-relaxed">
+                                        Полная настройка и ведение сквозной веб-аналитики проектов. Успешный опыт разработки и ведения сайтов крупных торговых центров, официальных корпоративных порталов компаний, а также конверсионных и рекламных лендингов.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Слайд 3: BA/SA и Проектирование Архитектуры -->
+                        <div class="slide-item slide-transition absolute inset-0 w-full opacity-0 transform translate-x-8 pointer-events-none grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl flex flex-col justify-between">
+                                <div class="space-y-3">
+                                    <div class="text-xs font-bold text-amber-400 uppercase tracking-widest">[ Аналитика / 05 ]</div>
+                                    <h3 class="text-base font-bold text-white uppercase">Кастомизация и развертывание 1С:ERP</h3>
+                                    <p class="text-xs text-slate-400 leading-relaxed">
+                                        Сбор, детальный анализ и формализация сложных бизнес-требований. Выявление функциональных разрывов (Gap Analysis), моделирование сквозных процессов в нотации BPMN, подготовка ТЗ на глубокую кастомизацию блоков 1С.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl flex flex-col justify-between">
+                                <div class="space-y-3">
+                                    <div class="text-xs font-bold text-pink-400 uppercase tracking-widest">[ Интеграции / 06 ]</div>
+                                    <h3 class="text-base font-bold text-white uppercase">Синхронизация сложных ИС</h3>
+                                    <p class="text-xs text-slate-400 leading-relaxed">
+                                        Проектирование логики взаимодействия ключевых модулей систем: заказы и задачи, автоматический расчет стоимости продукции, глубокая интеграция с базами данных заводов, подключение модулей телефонии и планирования.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Правая стрелочка -->
+                    <button onclick="nextSlide()" class="absolute right-0 z-20 w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-blue-500/50 flex items-center justify-center transition-all shadow-md" aria-label="Следующий слайд">
+                        &rarr;
+                    </button>
+                </div>
+
+
+                <!-- Индикаторы слайдов (точки) -->
+                <div class="flex justify-center gap-2 mt-6" id="slider-dots">
+                    <span class="w-2.5 h-2.5 rounded-full bg-blue-500 cursor-pointer" onclick="goToSlide(0)" role="button" aria-label="Перейти к слайду 1"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-slate-800 cursor-pointer" onclick="goToSlide(1)" role="button" aria-label="Перейти к слайду 2"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-slate-800 cursor-pointer" onclick="goToSlide(2)" role="button" aria-label="Перейти к слайду 3"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Опыт работы (Timeline) (Семантическая секция) -->
+        <section id="experience" class="max-w-4xl w-full mx-auto px-4 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl font-black text-white uppercase tracking-tight">Профессиональный путь</h2>
+                <p class="text-[10px] text-slate-500 uppercase tracking-widest mt-1">Хронология развития: 10+ лет в индустрии</p>
+            </div>
+
+            <div class="relative border-l-2 border-slate-800 ml-4 md:ml-32 space-y-8">
+                
+                <!-- Место 1 -->
+
+                <div class="relative pl-6 md:pl-8">
+                    <span class="absolute -left-[7px] top-1.5 w-3 h-3 bg-blue-500 rounded-full ring-4 ring-[#0b111e]"></span>
+                    <div class="md:absolute md:-left-36 md:top-1 text-xs font-mono text-slate-500 text-left md:text-right md:w-28 mb-1 md:mb-0">
+                        Май 2024 —<br>Февр. 2026
+                    </div>
+                    <div class="bg-slate-900/60 border border-slate-800 p-5 rounded-2xl shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <h3 class="text-sm font-bold text-white uppercase">Бизнес-аналитик 1С:ERP / Сопровождение ПО</h3>
+                            <span class="text-[10px] font-bold bg-slate-800 px-2 py-0.5 rounded text-slate-300">ООО СофтСервис</span>
+                        </div>
+                        <ul class="text-xs text-slate-400 space-y-1.5 list-disc pl-4 font-light">
+                            <li>Формализация требований клиентов, выявление функциональных разрывов при кастомизации систем «1С:ERP».</li>
+                            <li>Разработка ТЗ, контроль этапов выполнения доработок, проведение комплексного приемочного тестирования.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Место 2 -->
+                <div class="relative pl-6 md:pl-8">
+
+                    <span class="absolute -left-[7px] top-1.5 w-3 h-3 bg-indigo-500 rounded-full ring-4 ring-[#0b111e]"></span>
+                    <div class="md:absolute md:-left-36 md:top-1 text-xs font-mono text-slate-500 text-left md:text-right md:w-28 mb-1 md:mb-0">
+                        Дек. 2019 —<br>Июнь 2023
+                    </div>
+                    <div class="bg-slate-900/60 border border-slate-800 p-5 rounded-2xl shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <h3 class="text-sm font-bold text-white uppercase">Ведущий IT Project Manager</h3>
+                            <span class="text-[10px] font-bold bg-slate-800 px-2 py-0.5 rounded text-slate-300">Стальная Линия / ИваЛаб</span>
+                        </div>
+                        <p class="text-[11px] font-bold text-indigo-400 mb-2">&bull; Архитектурно спроектирован и запущен продукт «Ledums» (1000+ active пользователей).</p>
+                        <ul class="text-xs text-slate-400 space-y-1.5 list-disc pl-4 font-light">
+                            <li>Руководство кросс-командой разработки до 15 человек по методологиям Scrum и Kanban в Jira.</li>
+                            <li>Синхронизация каталогов со сложной ценовой матрицей завода для рынков сбыта в РФ и РБ, аналитика.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Место 3 -->
+                <div class="relative pl-6 md:pl-8">
+
+                    <span class="absolute -left-[7px] top-1.5 w-3 h-3 bg-slate-700 rounded-full ring-4 ring-[#0b111e]"></span>
+                    <div class="md:absolute md:-left-36 md:top-1 text-xs font-mono text-slate-500 text-left md:text-right md:w-28 mb-1 md:mb-0">
+                        Окт. 2017 —<br>Дек. 2019
+                    </div>
+                    <div class="bg-slate-900/60 border border-slate-800 p-5 rounded-2xl shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <h3 class="text-sm font-bold text-white uppercase">Специалист по поисковому продвижению (SEO)</h3>
+                            <span class="text-[10px] font-bold bg-slate-800 px-2 py-0.5 rounded text-slate-300">ЧПТУП Стальная Линия</span>
+                        </div>
+                        <ul class="text-xs text-slate-400 space-y-1.5 list-disc pl-4 font-light">
+                            <li>Технический аудит веб-ресурсов, кластеризация семантики, постановка ТЗ на доработку интерфейсов каталогов.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Место 4 -->
+                <div class="relative pl-6 md:pl-8">
+                    <span class="absolute -left-[7px] top-1.5 w-3 h-3 bg-slate-600 rounded-full ring-4 ring-[#0b111e]"></span>
+                    <div class="md:absolute md:-left-36 md:top-1 text-xs font-mono text-slate-500 text-left md:text-right md:w-28 mb-1 md:mb-0">
+
+                        Июль 2013 —<br>Сент. 2017
+                    </div>
+                    <div class="bg-slate-900/60 border border-slate-800 p-5 rounded-2xl shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <h3 class="text-sm font-bold text-white uppercase">Индивидуальный предприниматель (ИП)</h3>
+                            <span class="text-[10px] font-bold bg-slate-800 px-2 py-0.5 rounded text-indigo-400">Самозанятость</span>
+                        </div>
+                        <ul class="text-xs text-slate-400 space-y-1.5 list-disc pl-4 font-light">
+                            <li>Ремонт, техническое обслуживание и комплексная диагностика компьютерной и серверной техники.</li>
+                            <li>Разработка, верстка, контентное наполнение и базовое продвижение коммерческих веб-сайтов для заказчиков.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Место 5 -->
+                <div class="relative pl-6 md:pl-8">
+                    <span class="absolute -left-[7px] top-1.5 w-3 h-3 bg-slate-800 rounded-full ring-4 ring-[#0b111e]"></span>
+                    <div class="md:absolute md:-left-36 md:top-1 text-xs font-mono text-slate-500 text-left md:text-right md:w-28 mb-1 md:mb-0">
+                        Июль 2012 —<br>Июль 2013
+
+                    </div>
+                    <div class="bg-slate-900/60 border border-slate-800 p-5 rounded-2xl shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <h3 class="text-sm font-bold text-white uppercase">Инженер-программист</h3>
+                            <span class="text-[10px] font-bold bg-slate-800 px-2 py-0.5 rounded text-slate-300">ГУО СШ №8</span>
+                        </div>
+                        <ul class="text-xs text-slate-400 space-y-1.5 list-disc pl-4 font-light">
+                            <li>Администрирование локальной сети, обслуживание серверов, ведение и контентное наполнение официального сайта.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Повышение квалификации / Обучение -->
+        <section class="bg-slate-950 border-t border-slate-900 py-10" id="education">
+		<div class="text-center mb-10">
+            <h2 class="text-xl font-black text-white uppercase tracking-tight">Повышение квалификации</h2>
+            <p class="text-[10px] text-slate-500 uppercase tracking-widest mt-1">Профильные сертификаты и курсы</p>
+        </div>
+            <div class="max-w-4xl w-full mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-slate-900/40 border border-slate-800/80 p-4 rounded-xl flex gap-3 items-start">
+                    <span class="text-xl" aria-hidden="true">📜</span>
+
+                    <div>
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider">1С:Специалист-Консультант (2025)</h4>
+                        <p class="text-[11px] text-slate-400 mt-1 font-light">Внедрение подсистем производства и ремонтов в «1С:ERP Управление предприятием» (МиСофт).</p>
+                    </div>
+                </div>
+                <div class="bg-slate-900/40 border border-slate-800/80 p-4 rounded-xl flex gap-3 items-start">
+                    <span class="text-xl" aria-hidden="true">📜</span>
+                    <div>
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider">Руководитель проектов IT (2020)</h4>
+                        <p class="text-[11px] text-slate-400 mt-1 font-light">Профессиональный сертифицированный курс управления проектами (ЦОО Нетология).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Стек технологий (Семантическая секция) -->
+        <section id="skills" class="max-w-5xl w-full mx-auto px-4 py-16">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-black text-white uppercase tracking-tight">Технический и управленческий стек</h2>
+
+                <!-- <p class="text-[10px] text-slate-500 uppercase tracking-widest mt-1">Весь подтвержденный набор навыков из резюме</p> -->
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 text-center">
+                <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl text-xs font-medium text-slate-300">1С:ERP Предприятие</div>
+                <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl text-xs font-medium text-slate-300">Scrum / Kanban / Agile</div>
+                <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl text-xs font-medium text-slate-300">Разработка ТЗ и Регламентов</div>
+                <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl text-xs font-medium text-slate-300">Моделирование BPMN</div>
+                <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl text-xs font-medium text-slate-300">Atlassian Jira / Confluence</div>
+                <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl text-xs font-medium text-slate-300">Сквозная аналитика сайтов</div>
+                <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl text-xs font-medium text-slate-300">Яндекс DataLens / Метрика</div>
+                <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl text-xs font-medium text-slate-300">Google Analytics</div>
+                <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl text-xs font-medium text-slate-300">Управление рисками & KPI</div>
+                <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl text-xs font-medium text-slate-300">ClickUp / BiTrix24</div>
+                <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl text-xs font-medium text-slate-300">E-Commerce catalogs</div>
+                <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl text-xs font-medium text-slate-300">ИС / Лендинги / Корп. сайты</div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="bg-[#0b111e] border-t border-slate-900 py-6 text-center text-xs text-slate-600 font-medium shrink-0">
+        Юркевич Кирилл Олегович &copy; 2026.
+    </footer>
+
+    <!-- СКРИПТЫ УПРАВЛЕНИЯ -->
+    <script>
+        // Слайдер компетенций
+        let currentSlideIdx = 0;
+        const slides = document.getElementsByClassName('slide-item');
+        const dots = document.getElementById('slider-dots').children;
+        let autoPlayTimer = null;
+
+        function startAutoPlay() {
+            stopAutoPlay();
+            autoPlayTimer = setInterval(() => {
+                nextSlide();
+
+            }, 20000);
+        }
+
+        function stopAutoPlay() {
+            if (autoPlayTimer) clearInterval(autoPlayTimer);
+        }
+
+        function showSlide(idx) {
+            if (idx >= slides.length) currentSlideIdx = 0;
+            else if (idx < 0) currentSlideIdx = slides.length - 1;
+            else currentSlideIdx = idx;
+
+            for (let i = 0; i < slides.length; i++) {
+                if (i === currentSlideIdx) {
+                    slides[i].classList.remove('opacity-0', 'pointer-events-none', 'translate-x-8');
+                    slides[i].classList.add('opacity-100', 'translate-x-0');
+                    dots[i].className = "w-2.5 h-2.5 rounded-full bg-blue-500 cursor-pointer";
+                } else {
+                    slides[i].classList.remove('opacity-100', 'translate-x-0');
+
+                    slides[i].classList.add('opacity-0', 'pointer-events-none', 'translate-x-8');
+                    dots[i].className = "w-2.5 h-2.5 rounded-full bg-slate-800 cursor-pointer";
+                }
+            }
+        }
+
+        function nextSlide() {
+            showSlide(currentSlideIdx + 1);
+        }
+
+        function prevSlide() {
+            stopAutoPlay();
+            showSlide(currentSlideIdx - 1);
+            startAutoPlay();
+        }
+
+        function goToSlide(idx) {
+            stopAutoPlay();
+            showSlide(idx);
+
+            startAutoPlay();
+        }
+
+        // Система вывода тостов
+        function showToast(message, type = 'success') {
+
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            
+            toast.className = `p-4 rounded-xl shadow-2xl text-xs font-bold tracking-wide transition-all duration-300 transform translate-y-2 opacity-0 flex items-center border ${
+                type === 'success' ? 'bg-slate-900 border-blue-500 text-blue-400' : 'bg-slate-900 border-red-500 text-red-400'
+            }`;
+            
+            toast.innerText = message;
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-2', 'opacity-0');
+            }, 30);
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0', '-translate-y-2');
+                setTimeout(() => toast.remove(), 300);
+            }, 4000);
+        }
+
+
+        // Автоматическая генерация НАСТОЯЩИХ QR-кодов при старте страницы
+        window.onload = function() {
+            // Инициализация карусели
+            startAutoPlay();
+            
+            // Генерация QR для Telegram напрямую по никнейму
+            new QRCode(document.getElementById("tg-qrcode"), {
+                text: "tg://resolve?domain=@unheadless",
+                width: 64,
+                height: 64,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+
+            // Генерация QR для Почты
+            new QRCode(document.getElementById("email-qrcode"), {
+                text: "mailto:yourkevitchK@yandex.by",
+                width: 64,
+
+                height: 64,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        };
+    </script>
+</body>
+</html>
